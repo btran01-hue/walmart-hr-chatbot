@@ -1,0 +1,146 @@
+================================================================================
+                   LAX2 HR CHATBOT - SHARING MADE EASY!
+================================================================================
+
+          NO CODING REQUIRED - JUST FOLLOW THESE 3 STEPS!
+
+================================================================================
+
+
+STEP 1: RUN THE SETUP
+---------------------
+
+   [1] Find this file:  SETUP_AND_SHARE.bat
+   
+   [2] Double-click it
+   
+   [3] Follow the on-screen instructions
+   
+   [4] Keep the window OPEN (don't close it!)
+
+
+================================================================================
+
+
+STEP 2: SHARE THE CHATBOT FILE
+--------------------------------
+
+   The file to share: chatbot.html
+   
+   Pick ONE way to share:
+   
+   [ ] EMAIL IT
+       - Attach chatbot.html to email
+       - Send to your team
+       - Done!
+   
+   [ ] NETWORK DRIVE
+       - Copy chatbot.html to: \\LAX2-SHARE\HR\
+       - Tell team where it is
+       - Done!
+   
+   [ ] SHAREPOINT
+       - Upload chatbot.html to SharePoint
+       - Share the link
+       - Done!
+
+
+================================================================================
+
+
+STEP 3: TEST IT!
+-----------------
+
+   Ask a coworker to:
+   
+   [1] Open chatbot.html (from wherever you shared it)
+   
+   [2] Type this question:
+       "If I leave before my 5th hour, is it half a point?"
+   
+   [3] They should get the correct answer about attendance points!
+   
+   ✅ If it works - YOU'RE DONE! Celebrate! 🎉
+   
+   ❌ If it doesn't work - see TROUBLESHOOTING below
+
+
+================================================================================
+
+
+TROUBLESHOOTING
+----------------
+
+   Problem: "Can't connect to server"
+   
+   Solution:
+   - Make sure SETUP_AND_SHARE.bat window is still OPEN
+   - Check your coworker is on LAX2 network/WiFi
+   - Try restarting SETUP_AND_SHARE.bat
+   
+   ---
+   
+   Problem: "Getting wrong answers"
+   
+   Solution:
+   - Update FAQ: C:\Users\btran\Downloads\People Connect FAQ.docx
+   - Close and reopen SETUP_AND_SHARE.bat
+   - Try again
+   
+   ---
+   
+   Problem: "Batch file won't run"
+   
+   Solution:
+   - Right-click SETUP_AND_SHARE.bat
+   - Choose "Run as Administrator"
+   - Or see QUICK_SHARE_INSTRUCTIONS.md for manual steps
+
+
+================================================================================
+
+
+IMPORTANT NOTES
+----------------
+
+   ⚠️  KEEP THE WINDOW OPEN!
+        The black window that opens when you run SETUP_AND_SHARE.bat
+        MUST stay open while people are using the chatbot.
+        
+   📄  THE FILE TO SHARE:
+        chatbot.html (NOT the .bat files!)
+        
+   🔄  TO UPDATE FAQ:
+        Edit the Word document, then restart SETUP_AND_SHARE.bat
+        
+   📱  FOR HELP:
+        Read: START_HERE.md
+        Or:   QUICK_SHARE_INSTRUCTIONS.md
+
+
+================================================================================
+
+
+QUICK REFERENCE
+----------------
+
+   Files to USE:
+   ✓ SETUP_AND_SHARE.bat     <-- Run this to start
+   ✓ chatbot.html             <-- Share this with team
+   
+   Files to READ:
+   📖 START_HERE.md
+   📖 QUICK_SHARE_INSTRUCTIONS.md
+   📖 ANNOUNCEMENT_EMAIL_TEMPLATE.md
+   
+   Files to UPDATE:
+   ✏️  C:\Users\btran\Downloads\People Connect FAQ.docx
+
+
+================================================================================
+
+                         YOU'VE GOT THIS! 🐶
+
+                    Just run SETUP_AND_SHARE.bat!
+
+================================================================================

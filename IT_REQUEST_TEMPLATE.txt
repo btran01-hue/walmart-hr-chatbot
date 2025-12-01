@@ -1,0 +1,182 @@
+================================================================================
+                    EMAIL TEMPLATE FOR IT REQUEST
+================================================================================
+
+Copy and paste this into your email to IT:
+
+================================================================================
+
+Subject: Request for Windows VM - HR Chatbot Application
+
+
+Hi IT Team,
+
+I'm requesting a Windows virtual machine to host an internal HR chatbot 
+application for LAX2 associates.
+
+
+=== REQUIREMENTS ===
+
+Operating System: Windows Server 2019/2022 or Windows 10/11
+RAM: 4GB minimum (8GB preferred)
+Storage: 20GB
+CPU: 2 cores minimum
+Network: Internal LAX2 network access
+Ports needed: 8000 (HTTP)
+Remote Access: RDP (Remote Desktop)
+
+
+=== PURPOSE ===
+
+This VM will host a Python-based HR assistant chatbot that will:
+- Answer common HR questions for LAX2 associates
+- Reduce HR ticket volume and response times
+- Provide 24/7 self-service support for associates
+- Improve associate satisfaction
+
+
+=== TECHNICAL DETAILS ===
+
+Software needed:
+- Python 3.11 or higher
+- Internet access for initial setup (PyPI packages)
+- Internal network connectivity only (no external access needed)
+
+Availability: 24/7 uptime required
+Backup: Not critical (can be rebuilt from source)
+Security: Internal network only, no sensitive data stored
+
+
+=== USAGE ===
+
+- Users: LAX2 associates (approximately [NUMBER] users)
+- Access method: Web browser via internal network
+- Data: FAQ content only, no PII or sensitive information
+- Compliance: Internal use only, follows Walmart security policies
+
+
+=== INFORMATION NEEDED ===
+
+Please provide:
+1. Timeline for provisioning
+2. Server hostname/IP address when ready
+3. Remote Desktop connection details
+4. Administrator credentials
+5. Any firewall rules I need to request
+6. Process for requesting port 8000 to be opened
+
+
+=== BUSINESS JUSTIFICATION ===
+
+Benefits:
+• Reduce HR team workload (estimated 20-30 questions/day)
+• Faster response time for associates (instant vs. hours/days)
+• 24/7 availability (no waiting for HR office hours)
+• Consistent, accurate answers based on official policies
+• Free up HR team for complex issues
+
+Cost: Minimal (VM resources only, no software licensing needed)
+
+Timeline: Would like to deploy within 2 weeks if possible
+
+
+=== CONTACT ===
+
+For questions or additional information:
+
+Name: [Your Name]
+Title: [Your Title]
+Location: LAX2
+Email: [Your Email]
+Phone: [Your Phone]
+Manager: [Your Manager's Name]
+
+
+Thank you for your support!
+
+[Your Name]
+
+
+================================================================================
+                         ALTERNATIVE: SHORTER VERSION
+================================================================================
+
+If your IT prefers shorter requests:
+
+
+Subject: VM Request - LAX2 HR Chatbot
+
+Hi IT,
+
+Requesting a Windows VM for an internal HR chatbot:
+
+Specs:
+- Windows 10/11 or Server 2019/2022
+- 4GB RAM, 20GB storage, 2 cores
+- Port 8000 open
+- RDP access
+
+Purpose: Host Python chatbot for LAX2 associate HR questions
+Users: LAX2 associates (internal network only)
+Uptime: 24/7
+
+Please provide server details and timeline.
+
+Thanks!
+[Your Name]
+LAX2 [Your Title]
+
+
+================================================================================
+                              FOLLOW-UP EMAIL
+================================================================================
+
+If they ask for more details:
+
+
+Subject: RE: VM Request - Additional Details
+
+Hi,
+
+Additional details requested:
+
+Q: What software will run on this VM?
+A: Python 3.11+ and a FastAPI web application. No database or 
+   additional software required.
+
+Q: What data will be stored?
+A: Only HR policy FAQ documents. No PII, no associate data, no 
+   sensitive information.
+
+Q: How many users?
+A: Approximately [NUMBER] LAX2 associates will have access.
+
+Q: Why not use existing infrastructure?
+A: This is a pilot program. If successful, we can discuss moving to 
+   production infrastructure.
+
+Q: What about security?
+A: Internal network only, no external access. Application uses 
+   standard Python packages. Can provide code review if needed.
+
+Q: Who will maintain it?
+A: I will maintain the application. IT only needs to provide the VM 
+   and network access.
+
+Let me know if you need anything else!
+
+[Your Name]
+
+
+================================================================================
+
+                        TIPS FOR FASTER APPROVAL:
+
+1. Emphasize "internal use only" - no external exposure
+2. Mention it's a "pilot program" - easier to approve
+3. Explain business benefits - reduced HR workload
+4. Offer to demonstrate the chatbot to IT if they want to see it
+5. Be flexible on timeline - "whenever convenient" gets faster response
+6. CC your manager on the request - shows management support
+
+================================================================================

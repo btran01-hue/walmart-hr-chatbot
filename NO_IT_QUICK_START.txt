@@ -1,0 +1,206 @@
+================================================================================
+
+                       🛠️ NO IT? NO PROBLEM! 🛠️
+
+                    Set Up Your Own Server in 30 Minutes
+
+================================================================================
+
+
+                              WHAT YOU NEED:
+
+                    🖥️  Any spare Windows computer
+                    🔌  Power outlet (stays plugged in!)
+                    🌐  LAX2 network connection
+                    ⏱️   30 minutes of your time
+
+================================================================================
+
+
+                           THE SIMPLE PLAN:
+
+
+    1️⃣  FIND A COMPUTER
+        • Old PC nobody uses? Perfect!
+        • Computer in back office? Great!
+        • Your work laptop? Works too!
+
+                            ⬇️
+
+    2️⃣  COPY FILES
+        • USB drive → Copy chatbot folder
+        • Paste to: C:\Apps\walmart-hr-chatbot
+
+                            ⬇️
+
+    3️⃣  INSTALL PYTHON
+        • Download from python.org
+        • Check "Add to PATH"
+        • Install!
+
+                            ⬇️
+
+    4️⃣  INSTALL CHATBOT
+        • Open Command Prompt
+        • Run the commands (I'll give you them!)
+        • Takes 5 minutes
+
+                            ⬇️
+
+    5️⃣  MAKE IT AUTO-START
+        • Copy 1 file to Startup folder
+        • Done!
+
+                            ⬇️
+
+    6️⃣  SHARE WITH TEAM
+        • Update chatbot.html with new IP
+        • Email to team
+        • Everyone can use it 24/7!
+
+
+================================================================================
+
+
+                          QUICK COMMANDS:
+
+
+On the spare computer, open Command Prompt and run:
+
+    cd C:\Apps\walmart-hr-chatbot\backend
+    python -m venv .venv
+    .venv\Scripts\activate
+    pip install fastapi uvicorn openai python-dotenv pydantic httpx python-docx
+    uvicorn main:app --host 0.0.0.0 --port 8000
+
+See "healthy"? You're done! Press Ctrl+C.
+
+
+================================================================================
+
+
+                         MAKE IT AUTO-START:
+
+
+Just copy this file:
+    C:\Apps\walmart-hr-chatbot\START_CHATBOT_SERVICE.bat
+
+To this location:
+    C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\
+
+That's it! It starts when the computer boots!
+
+
+================================================================================
+
+
+                           GET THE IP:
+
+
+On the spare computer:
+
+    ipconfig
+
+Look for "IPv4 Address" - write it down!
+
+Example: 192.168.1.150
+
+
+================================================================================
+
+
+                       UPDATE CHATBOT.HTML:
+
+
+On YOUR laptop:
+
+    cd walmart-hr-chatbot
+    UPDATE_CHATBOT_IP.bat
+
+Enter the IP you wrote down.
+
+Done! Now share chatbot.html with your team!
+
+
+================================================================================
+
+
+                        WHAT TO TELL YOUR TEAM:
+
+
+"Hey! The HR chatbot is now 24/7!
+
+1. Download the attached chatbot.html
+2. Open it in Chrome/Edge
+3. Ask any HR question!
+
+It's running on a dedicated computer now, so it's 
+always available!"
+
+
+================================================================================
+
+
+                            TROUBLESHOOTING:
+
+
+Problem: Computer goes to sleep
+Fix: Settings → Power → Never sleep
+
+Problem: Can't connect from other PCs
+Fix: Open firewall port 8000 (see full guide)
+
+Problem: Stops after reboot
+Fix: Make sure .bat file is in Startup folder
+
+
+================================================================================
+
+
+                          DETAILED GUIDES:
+
+
+    📝  SIMPLE_DIY_CHECKLIST.txt
+        Quick checkbox list - print and follow!
+
+    📖  DIY_SETUP_NO_IT_NEEDED.md
+        Complete step-by-step guide with all details
+
+
+================================================================================
+
+
+                          YOU CAN DO THIS!
+
+                No IT team? No problem!
+                No server? No problem!
+                No budget? No problem!
+
+                Just need:
+                • Spare computer
+                • 30 minutes
+                • This guide
+
+                         LET'S GO! 🚀
+
+================================================================================
+
+
+                        QUICK START STEPS:
+
+1. Read: SIMPLE_DIY_CHECKLIST.txt (5 min)
+2. Find a spare computer (5 min)
+3. Follow the checklist (30 min)
+4. Test it (5 min)
+5. Share with team!
+
+Total: About 45 minutes from start to finish!
+
+
+================================================================================
+
+                  Questions? Check DIY_SETUP_NO_IT_NEEDED.md
+
+                    You've got this! 🐶
+
+================================================================================

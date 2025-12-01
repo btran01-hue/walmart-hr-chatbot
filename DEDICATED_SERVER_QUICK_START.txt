@@ -1,0 +1,176 @@
+================================================================================
+                MOVING TO DEDICATED SERVER - QUICK START
+================================================================================
+
+                    Follow these 3 simple phases:
+
+================================================================================
+
+
+PHASE 1: GET A SERVER (1-5 days)
+---------------------------------
+
+   [ ] Send email to IT requesting a VM
+       → Use template in: IT_REQUEST_TEMPLATE.txt
+       → Copy and paste into email
+       → Send to your IT help desk
+   
+   [ ] Wait for IT to provision the server
+       → They'll give you: IP address, server name, login
+   
+   [ ] Connect via Remote Desktop
+       → Press Windows key + R
+       → Type: mstsc
+       → Enter server name/IP
+       → Login with credentials
+
+
+================================================================================
+
+
+PHASE 2: SET UP THE SERVER (1-2 hours)
+---------------------------------------
+
+   [ ] Install Python 3.11+
+       → Download from python.org
+       → Check "Add to PATH"
+       → Install for all users
+   
+   [ ] Copy chatbot files to server
+       → Copy walmart-hr-chatbot folder
+       → Put in: C:\Apps\walmart-hr-chatbot
+   
+   [ ] Install dependencies
+       → Open Command Prompt on server
+       → Run:
+         cd C:\Apps\walmart-hr-chatbot\backend
+         python -m venv .venv
+         .venv\Scripts\activate
+         pip install fastapi uvicorn openai python-dotenv pydantic httpx python-docx
+   
+   [ ] Test it works
+       → Run: uvicorn main:app --host 0.0.0.0 --port 8000
+       → Open browser: http://localhost:8000/health
+       → Should see: {"status":"healthy"}
+       → Press Ctrl+C to stop
+
+
+================================================================================
+
+
+PHASE 3: CONFIGURE AUTO-START (30 minutes)
+-------------------------------------------
+
+   [ ] Set up Windows Task Scheduler
+       → Open Task Scheduler
+       → Create Task (not Basic Task)
+       → Name: LAX2 HR Chatbot Service
+       → Run whether user is logged on or not
+       → Run with highest privileges
+       → Trigger: At startup
+       → Action: Start program
+       → Program: C:\Apps\walmart-hr-chatbot\START_CHATBOT_SERVICE.bat
+   
+   [ ] Configure Windows Firewall
+       → Open PowerShell as admin
+       → Run:
+         New-NetFirewallRule -DisplayName "LAX2 HR Chatbot" -Direction Inbound -LocalPort 8000 -Protocol TCP -Action Allow
+   
+   [ ] Get server IP address
+       → Run: ipconfig
+       → Write down IPv4 Address: ___________________
+   
+   [ ] Update chatbot.html with server IP
+       → Run: UPDATE_CHATBOT_IP.bat
+       → Enter the server IP
+       → File is updated automatically!
+   
+   [ ] Test from another computer
+       → Open updated chatbot.html
+       → Ask a question
+       → Should work!
+   
+   [ ] Send update to your team
+       → Attach updated chatbot.html
+       → Tell them it's now 24/7!
+
+
+================================================================================
+
+
+DETAILED INSTRUCTIONS:
+----------------------
+
+For step-by-step guide with screenshots and troubleshooting:
+→ See: MOVE_TO_DEDICATED_SERVER.md
+
+
+================================================================================
+
+
+FILES YOU NEED:
+---------------
+
+On the server:
+  • C:\Apps\walmart-hr-chatbot\ (entire folder)
+  • START_CHATBOT_SERVICE.bat (included)
+
+On your laptop:
+  • UPDATE_CHATBOT_IP.bat (to update chatbot.html)
+  • IT_REQUEST_TEMPLATE.txt (to request VM)
+
+
+================================================================================
+
+
+QUICK REFERENCE:
+----------------
+
+Start chatbot manually:
+  C:\Apps\walmart-hr-chatbot\START_CHATBOT_SERVICE.bat
+
+Check if running:
+  tasklist | findstr uvicorn
+
+Test health:
+  http://SERVER-IP:8000/health
+
+Restart service:
+  Task Scheduler → Right-click task → End → Run
+
+View logs:
+  Task Scheduler → Task → History tab
+
+
+================================================================================
+
+
+TIMELINE:
+---------
+
+Day 1:     Send IT request
+Day 2-5:   Wait for VM provisioning
+Day 6:     Install Python and copy files (1-2 hours)
+Day 7:     Configure auto-start and test (30 min)
+Day 8:     Update team and go live!
+
+Total: About 1 week
+
+
+================================================================================
+
+
+NEED HELP?
+----------
+
+Stuck? Check these files:
+  • MOVE_TO_DEDICATED_SERVER.md (complete guide)
+  • IT_REQUEST_TEMPLATE.txt (what to send IT)
+  • START_HERE.md (overview)
+
+
+================================================================================
+
+                You've got this! Just follow the phases! 🐶
+
+================================================================================

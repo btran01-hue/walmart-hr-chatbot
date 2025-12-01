@@ -1,0 +1,82 @@
+# Walmart HR Chatbot - Docker Compose Configuration
+# Run with: docker-compose up -d
+# View logs: docker-compose logs -f
+# Stop: docker-compose down
+
+version: '3.8'
+
+services:
+  # ============================================
+  # Backend API (FastAPI + Python)
+  # ============================================
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: hr-chatbot-backend
+    ports:
+      - "8000:8000"
+    environment:
+      # Choose ONE of these AI providers:
+      
+      # Option 1: Regular OpenAI (easiest!)
+      - USE_AZURE_OPENAI=false
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - OPENAI_MODEL=${OPENAI_MODEL:-gpt-4o-mini}
+      
+      # Option 2: Azure OpenAI / Walmart Element GenAI
+      # - USE_AZURE_OPENAI=true
+      # - AZURE_OPENAI_ENDPOINT=${AZURE_OPENAI_ENDPOINT:-}
+      # - AZURE_OPENAI_API_KEY=${AZURE_OPENAI_API_KEY:-}
+      # - AZURE_OPENAI_DEPLOYMENT_NAME=${AZURE_OPENAI_DEPLOYMENT_NAME:-gpt-4}
+      
+      # Microsoft List fallback URL
+      - MICROSOFT_LIST_URL=${MICROSOFT_LIST_URL:-https://walmart.sharepoint.com/sites/HR/Lists/Resources}
+      
+      # CORS - allow frontend
+      - ALLOWED_ORIGINS=http://localhost,http://localhost:80,http://localhost:3000,http://frontend
+      
+      # Chatbot behavior
+      - CONFIDENCE_THRESHOLD=${CONFIDENCE_THRESHOLD:-0.7}
+      - MAX_TOKENS=${MAX_TOKENS:-500}
+      - TEMPERATURE=${TEMPERATURE:-0.7}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - chatbot-network
+
+  # ============================================
+  # Frontend (React + Nginx)
+  # ============================================
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+      args:
+        # API URL is proxied through nginx, so use relative path
+        VITE_API_URL: ""
+    container_name: hr-chatbot-frontend
+    ports:
+      - "80:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:80/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    networks:
+      - chatbot-network
+
+networks:
+  chatbot-network:
+    driver: bridge
+    name: hr-chatbot-network

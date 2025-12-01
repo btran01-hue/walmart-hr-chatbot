@@ -1,0 +1,212 @@
+================================================================================
+                    DIY SETUP - NO IT HELP NEEDED!
+                         Simple 6-Step Checklist
+================================================================================
+
+                    Total Time: About 30 minutes
+                         Cost: $0 (use spare PC)
+
+================================================================================
+
+
+STEP 1: FIND A COMPUTER
+-----------------------
+
+   What you need:
+   • Any Windows computer that can stay on 24/7
+   • Connected to LAX2 network
+   • In a secure location (not someone's desk!)
+
+   Where to look:
+   [ ] Old computer nobody uses
+   [ ] Computer in back office
+   [ ] Ask manager for spare equipment
+   [ ] Your work laptop (keep it at work overnight)
+   [ ] Old personal laptop you can leave at work
+
+   Location of computer: _______________________________
+
+
+================================================================================
+
+
+STEP 2: CONFIGURE WINDOWS
+-------------------------
+
+   On the computer:
+
+   [ ] Disable sleep mode
+       Settings → Power & Sleep → Never
+
+   [ ] Set static IP (optional but recommended)
+       Settings → Network → IP Settings → Manual
+
+   [ ] Disable auto-restart for updates
+       Settings → Windows Update → Advanced Options
+
+   Computer IP Address: _______________________________
+
+
+================================================================================
+
+
+STEP 3: COPY FILES
+------------------
+
+   Copy walmart-hr-chatbot folder to the computer:
+
+   [ ] Method A: USB drive (easiest!)
+       - Copy folder to USB
+       - Plug into computer
+       - Copy to C:\Apps\walmart-hr-chatbot
+
+   [ ] Method B: OneDrive/SharePoint
+       - Zip the folder
+       - Upload to OneDrive
+       - Download on computer
+       - Extract to C:\Apps\walmart-hr-chatbot
+
+   Files location: C:\Apps\walmart-hr-chatbot
+
+
+================================================================================
+
+
+STEP 4: INSTALL PYTHON
+----------------------
+
+   On the computer:
+
+   [ ] Download Python from python.org
+       Latest version: 3.11 or higher
+
+   [ ] Run installer
+       ✅ CHECK: "Add Python to PATH"
+       ✅ CHECK: "Install for all users"
+
+   [ ] Test it works
+       Open Command Prompt
+       Type: python --version
+       Should show: Python 3.11.x
+
+
+================================================================================
+
+
+STEP 5: INSTALL & TEST
+----------------------
+
+   Open Command Prompt as Administrator:
+
+   [ ] Install dependencies
+       cd C:\Apps\walmart-hr-chatbot\backend
+       python -m venv .venv
+       .venv\Scripts\activate
+       pip install fastapi uvicorn openai python-dotenv pydantic httpx python-docx
+
+   [ ] Test it works
+       uvicorn main:app --host 0.0.0.0 --port 8000
+       Open browser: http://localhost:8000/health
+       Should see: {"status":"healthy"}
+       Press Ctrl+C to stop
+
+
+================================================================================
+
+
+STEP 6: SET UP AUTO-START
+-------------------------
+
+   [ ] Copy START_CHATBOT_SERVICE.bat to Startup folder
+       From: C:\Apps\walmart-hr-chatbot\START_CHATBOT_SERVICE.bat
+       To:   C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp\
+
+   [ ] Open Windows Firewall
+       Run as admin: 
+       New-NetFirewallRule -DisplayName "LAX2 HR Chatbot" -Direction Inbound -LocalPort 8000 -Protocol TCP -Action Allow
+
+   [ ] Update chatbot.html with computer's IP
+       On YOUR laptop:
+       Run: UPDATE_CHATBOT_IP.bat
+       Enter computer's IP address
+
+   [ ] Test from another computer
+       Open updated chatbot.html
+       Ask a question
+       Should work!
+
+   [ ] Restart the computer and verify auto-start works
+       Wait 1 minute after boot
+       Check: http://COMPUTER-IP:8000/health
+
+
+================================================================================
+
+
+FINISHING TOUCHES
+-----------------
+
+   [ ] Label the computer
+       Put sticky note: "LAX2 HR CHATBOT - DO NOT TURN OFF"
+
+   [ ] Document it
+       Write down:
+       - Computer location: __________________________
+       - IP address: __________________________________
+       - Login info: __________________________________
+       - Your contact: ________________________________
+
+   [ ] Send email to team
+       Attach updated chatbot.html
+       Tell them it's now 24/7!
+
+   [ ] Test it for a few days
+       Check once a day: http://COMPUTER-IP:8000/health
+
+
+================================================================================
+
+
+TROUBLESHOOTING
+---------------
+
+   Problem: Can't connect from other computers
+   Solution:
+   - Check firewall is open (port 8000)
+   - Ping the computer: ping COMPUTER-IP
+   - Check chatbot is running on the computer
+
+   Problem: Chatbot stops after reboot
+   Solution:
+   - Check Startup folder has the .bat file
+   - Or set up Task Scheduler instead
+
+   Problem: Computer goes to sleep
+   Solution:
+   - Settings → Power → Never sleep (both battery and plugged in)
+   - Make sure power cable is plugged in!
+
+
+================================================================================
+
+
+COMPLETE GUIDE
+--------------
+
+   For detailed step-by-step instructions with screenshots:
+   → See: DIY_SETUP_NO_IT_NEEDED.md
+
+
+================================================================================
+
+
+YOU DID IT! 🎉
+
+   ✅ No IT help needed
+   ✅ No cost
+   ✅ 24/7 chatbot for your team
+   ✅ Professional solution!
+
+   Congratulations! 🐶
+
+================================================================================
