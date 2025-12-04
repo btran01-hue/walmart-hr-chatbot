@@ -461,57 +461,57 @@
         // ============================================
         const FAQ_DATABASE = [
             {
-                keywords: ['5th hour', 'leave early', 'full point', 'incomplete shift', 'before 5th', 'leave before'],
-                question: 'What happens if I leave before my 5th hour?',
-                answer: 'If you leave before hitting your 5th hour, it will be a full point. Leaving prior to your 5th hour is considered an incomplete shift, so you will receive a full point. If you leave at your 5th hour or later (but before the end of your shift), it will only be 0.5 points.',
+                keywords: ['5th hour', 'leave early', 'full point', 'half point', 'incomplete shift', 'before 5th', 'leave before', 'half pt', 'full pt', '0.5'],
+                question: 'If I leave prior to my 5th hour, will it be half a pt or a full pt?',
+                answer: 'It will be a full point. Leaving prior to hitting your 5th hour is considered an incomplete shift therefore you will be receiving a full point. If you leave at your 5th hour or early prior to the end of your shift it will be 0.5.',
                 confidence: 0.95
             },
             {
-                keywords: ['6th hour', 'lunch', 'skip lunch', 'lunch exempt', 'take lunch', 'meal break'],
-                question: 'Do I need to take lunch if I leave at my 6th hour?',
-                answer: 'If you leave at your 6th hour or prior to your 6th hour, you do not have to take a lunch.',
+                keywords: ['6th hour', 'lunch', 'skip lunch', 'lunch exempt', 'take lunch', 'meal break', 'exempt'],
+                question: 'If I leave at my 6th hour do I still have to take a lunch or will I be exempt?',
+                answer: 'If you leave at your 6th hour or prior to your 6th hour you do not have to take a lunch.',
                 confidence: 0.95
             },
             {
-                keywords: ['pto emergency', 'pto vs ppto', 'use pto', 'ppto difference', 'emergency pto', 'pto for emergency'],
-                question: 'Can I use PTO for an emergency?',
-                answer: 'No, PTO requires associates to submit the request for approval as far in advance as possible. To cover emergencies, you must use PPTO (Protected PTO). PPTO is specifically designed for unexpected situations like illness or emergencies.',
+                keywords: ['pto emergency', 'pto vs ppto', 'use pto', 'ppto difference', 'emergency pto', 'pto for emergency', 'pto balance', 'sufficient ppto'],
+                question: 'I have an emergency, can I use my PTO balance if I dont have sufficient PPTO?',
+                answer: 'No, PTO requires associates to submit the request for approval as far in advance. To cover emergencies, you must use PPTO.',
                 confidence: 0.95
             },
             {
-                keywords: ['no ppto', 'out of ppto', 'dont have ppto', 'ppto gone', 'no protected pto'],
-                question: 'What if I do not have any PPTO?',
-                answer: 'If you do not have PPTO available, you risk obtaining an attendance point for incomplete shift, early out, or absence. Consider building up your PPTO balance for future emergencies.',
+                keywords: ['no ppto', 'out of ppto', 'dont have ppto', 'ppto gone', 'no protected pto', 'tardy', 'early out', 'absence', 'what if'],
+                question: 'I have an emergency, what if I dont have PPTO to cover my tardy/early out/absence?',
+                answer: 'You risk obtaining an attendance point for Incomplete shift/early out/absence.',
                 confidence: 0.95
             },
             {
-                keywords: ['doctor note', 'accommodation', 'medical', 'restriction', 'doctor documentation', 'work restriction', 'medical accommodation'],
-                question: 'Can I get accommodations with a doctors note?',
-                answer: 'We cannot accommodate based solely on a doctors note brought in-house. You must go through the official accommodation process and submit your doctors documentation to the Accommodations team for approval. In the meantime, you may need to open a Leave of Absence (LOA) to cover any absences while waiting for accommodation confirmation.',
+                keywords: ['doctor note', 'accommodation', 'restrictions', 'restriction', 'doctor documentation', 'work restriction', 'medical accommodation', 'different area', 'accommodated'],
+                question: 'I have restrictions from my doctor, I have a note can I be accommodated to work in a different area?',
+                answer: 'No, we cannot accommodate. You must go through the accommodation process and submit your doctor documentation to them to obtain approval. You would need to open a LOA to cover absences in the meantime you wait for confirmation approval from accommodations.',
                 confidence: 0.95
             },
             {
-                keywords: ['leave and come back', 'leave and return', 'go home come back', 'leave return same shift'],
-                question: 'Can I leave and come back during my shift?',
-                answer: 'You must notify your manager prior to leaving the building. However, you are still responsible for covering the time you were gone with PPTO. Even if you return to finish your shift, the time away needs to be covered.',
+                keywords: ['leave and come back', 'leave and return', 'go home come back', 'leave return same shift', 'complete the rest'],
+                question: 'Can I leave and come back to complete the rest of my shift?',
+                answer: 'You must notify your manager prior to leaving the building however you are still responsible for covering your shift with PPTO for your need to leave early and come back.',
                 confidence: 0.95
             },
             {
-                keywords: ['change shift', 'transfer shift', 'switch shift', 'different shift', 'move shift', 'shift transfer'],
-                question: 'How do I change or transfer to a different shift?',
-                answer: 'To transfer shifts, you must first check if there are open roles available and apply through the competitive process. You will need to meet time-in-position requirements, have acceptable attendance points, and no active corrective actions (orange/DA). If no roles are available, you can escalate your request through the Open-Door Process by speaking with an AGM and HRM.',
+                keywords: ['change shift', 'transfer shift', 'switch shift', 'different shift', 'move shift', 'shift transfer', 'need to change'],
+                question: 'I need to change my shift, what do I do?',
+                answer: 'To transfer you must review if we have open roles available and apply through the competitive process following with meeting time in position, attendance points and no orange-DA. If roles are not available, you will need to escalate your request through the Open-Door Process with an AGM and HRM.',
                 confidence: 0.95
             },
             {
-                keywords: ['doctor note excuse', 'doctors note absence', 'excuse absence', 'note from doctor', 'accept doctor note'],
-                question: 'Will a doctors note excuse my absence?',
-                answer: 'Unfortunately, we do not accept doctors notes in-house to excuse absences. Your options are: 1) Use PPTO to cover the time, 2) Accept the attendance point, or 3) Open a Leave of Absence (LOA) with Sedgwick if you have a qualifying medical situation.',
+                keywords: ['doctor note excuse', 'doctors note absence', 'excuse absence', 'note from doctor', 'accept doctor note', 'brought a doctor', 'absent for one day'],
+                question: 'I was absent for one day, I brought a doctors note to excuse my absence',
+                answer: 'Unfortunately, we do not take doctors notes in house. You will either need to use PPTO, take the point or open an LOA with Sedgwick.',
                 confidence: 0.95
             },
             {
-                keywords: ['call off ppto', 'call in ppto', 'report absence ppto', 'still call off', 'report absence'],
-                question: 'Do I still need to call off if I am using PPTO?',
-                answer: 'Yes! Even when using PPTO, you must still report your absence through the Walmart associate hotline or the Me@Walmart app. If you do not call off, you may still receive an attendance point even if you have PPTO to cover the time. Always report your absence AND apply your PPTO.',
+                keywords: ['call off ppto', 'call in ppto', 'report absence ppto', 'still call off', 'still have to call', 'put ppto'],
+                question: 'Do I still have to call off when I put PPTO?',
+                answer: 'Yes, you do.',
                 confidence: 0.95
             },
             {
@@ -583,31 +583,31 @@
             {
                 keywords: ['seasonal', 'convert', 'full-time', 'fulltime', 'permanent', 'seasonal to full', 'convert seasonal', '90 day', '120 day', '150 day'],
                 question: 'How can a seasonal get converted to full-time?',
-                answer: 'You can apply to open positions on the Career Preference on One.Walmart.com. If you are looking to convert from seasonal full-time, in your current position, you must meet the eligibility requirements. Attendance should be no more than 2.5 points and no colored disciplinary actions. Walmart will review at your 90, 120, 150 day and evaluate if they have permanent positions available. Partner with your manager or Human Resources if you have further questions.',
+                answer: 'You can apply to open positions on the Career Preference on One.Walmart.com. If you are looking to convert from seasonal full-time, in your current position, you must meet the eligibility requirements. Attendance should no more than 2.5 points and no colored disciplinary actions. Walmart will review at your 90, 120, 150 day and evaluate if they have permanent positions available. Partner with your manager or Human Resources if you have further questions.',
                 confidence: 0.95
             },
             {
-                keywords: ['seasonal apply', 'seasonal position', 'seasonal open', 'can seasonal apply'],
-                question: 'Can a seasonal associate apply to open positions?',
+                keywords: ['seasonal apply', 'seasonal position', 'seasonal open', 'can seasonal apply', 'can a seasonal'],
+                question: 'Can a seasonal associate apply to open position?',
                 answer: 'Yes, you can through Career Preference on One.Walmart.com.',
                 confidence: 0.95
             },
             {
-                keywords: ['apply requisition', 'open requisition', 'apply position', 'how to apply', 'career preference', 'apply job'],
+                keywords: ['apply requisition', 'open requisition', 'apply position', 'how to apply', 'career preference', 'apply job', 'open requisitions'],
                 question: 'How do I apply to open requisitions?',
                 answer: 'Through Career Preference on One.Walmart.com.',
                 confidence: 0.95
             },
             {
-                keywords: ['points fall off', 'points expire', 'attendance expire', 'how long points', 'points removed', 'points drop'],
+                keywords: ['points fall off', 'points expire', 'attendance expire', 'how long points', 'points removed', 'points drop', 'fall off'],
                 question: 'How long does it take for points to fall off?',
                 answer: 'Attendance points are removed at 6 months.',
                 confidence: 0.95
             },
             {
-                keywords: ['da fall off', 'da expire', 'disciplinary action expire', 'how long da', 'da removed', 'da drop', 'disciplinary fall off'],
+                keywords: ['da fall off', 'da expire', 'disciplinary action expire', 'how long da', 'da removed', 'da drop', 'disciplinary fall off', 'das fall off', 'das expire'],
                 question: 'How long does it take DAs to fall off?',
-                answer: 'DAs (Disciplinary Actions) take 24 months to fall off.',
+                answer: 'DAs takes 24 months to fall off.',
                 confidence: 0.95
             }
         ];
