@@ -682,7 +682,7 @@
             if (showFallback && !isUser) {
                 var fallback = document.createElement('div');
                 fallback.className = 'fallback-banner';
-                fallback.innerHTML = '<strong>Need more help?</strong> I could not find an exact answer for your question. Please submit your request to the LAX2 HR team: <a href="' + SHAREPOINT_URL + '" target="_blank" rel="noopener noreferrer">Click here to submit an HR request</a>';
+                fallback.innerHTML = '<strong>Need more help?</strong> I could not find an exact answer for your question. Please submit your request to the LAX2 HR team: <a href="' + SHAREPOINT_URL + '" target="_blank" rel="noopener noreferrer">Click here to submit an HR request</a><br><span style="color: red; font-weight: bold; background-color: yellow;">Once you click on the link, please log in by userid@wmsc.wal-mart.com.</span>';
                 messagesDiv.appendChild(fallback);
             }
 
